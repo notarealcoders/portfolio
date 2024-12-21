@@ -32,6 +32,62 @@ const projects = [
     liveUrl: 'https://example.com',
     githubUrl: 'https://github.com/example/project',
   },
+  {
+    title: 'E-commerce Platform',
+    description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
+    tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/example/project',
+  },
+  {
+    title: 'AI Chat Application',
+    description: 'Real-time chat application powered by OpenAI API.',
+    tags: ['React', 'Node.js', 'OpenAI', 'Socket.io'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/example/project',
+  },
+  {
+    title: 'E-commerce Platform',
+    description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
+    tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/example/project',
+  },
+  {
+    title: 'AI Chat Application',
+    description: 'Real-time chat application powered by OpenAI API.',
+    tags: ['React', 'Node.js', 'OpenAI', 'Socket.io'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/example/project',
+  },
+  {
+    title: 'E-commerce Platform',
+    description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
+    tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/example/project',
+  },
+  {
+    title: 'AI Chat Application',
+    description: 'Real-time chat application powered by OpenAI API.',
+    tags: ['React', 'Node.js', 'OpenAI', 'Socket.io'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/example/project',
+  },
+  {
+    title: 'E-commerce Platform',
+    description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
+    tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/example/project',
+  },
+  {
+    title: 'AI Chat Application',
+    description: 'Real-time chat application powered by OpenAI API.',
+    tags: ['React', 'Node.js', 'OpenAI', 'Socket.io'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/example/project',
+  },
   // Add more projects as needed
 ];
 
