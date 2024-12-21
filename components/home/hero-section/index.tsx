@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { HeroContent } from './hero-content';
-import { CodePreview } from './code-preview';
+import { Terminal } from './terminal';
 
 export function HeroSection() {
   return (
@@ -17,7 +17,7 @@ export function HeroSection() {
             className="relative hidden lg:block"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur-3xl" />
-            <CodePreview />
+            <Terminal />
           </motion.div>
         </div>
       </div>
