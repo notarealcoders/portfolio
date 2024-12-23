@@ -1,19 +1,21 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-import { CommandMenu } from '@/components/command-menu';
-import { Terminal } from '@/components/terminal';
-import { Analytics } from '@/components/analytics';
-import { Toaster } from '@/components/ui/toaster';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { CommandMenu } from "@/components/command-menu";
+import { Terminal } from "@/components/terminal";
 
-const inter = Inter({ subsets: ['latin'] });
+import { Analytics } from "@/components/analytics";
+import { Toaster } from "@/components/ui/toaster";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { TerminalButton } from "@/components/TerminalButton";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Developer Portfolio',
-  description: 'A modern developer portfolio showcasing my work and skills',
+  title: "Developer Portfolio",
+  description: "A modern developer portfolio showcasing my work and skills",
 };
 
 export default function RootLayout({
@@ -29,7 +31,9 @@ export default function RootLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
-            <Terminal />
+            {/* <Terminal /> */}
+
+            <TerminalButton />
             <CommandMenu />
             <Analytics />
             <Toaster />
