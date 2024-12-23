@@ -9,7 +9,10 @@ import { Terminal } from "../terminal";
 
 export function HeroSection() {
   return (
-    <section className="min-h-[90vh] flex items-center">
+    <section
+      className="min-h-[90vh] flex items-center"
+      aria-labelledby="hero-heading"
+    >
       <div className="container px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -17,6 +20,9 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <h1 id="hero-heading" className="sr-only">
+              Hero Section
+            </h1>
             <TypewriterEffect
               words={[
                 "Hi, I'm John Doe",
@@ -24,33 +30,26 @@ export function HeroSection() {
                 "UI/UX Enthusiast",
                 "Problem Solver",
               ]}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
             />
-            <p className="mt-6 text-xl text-muted-foreground max-w-[600px]">
-              Crafting scalable, user-friendly, and visually appealing digital
-              experiences that make a difference.
+            <p className="mt-4 text-lg text-gray-600">
+              I build scalable web applications and delightful user experiences.
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <Button size="lg" asChild>
-                <Link href="/projects">
-                  View My Work
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/contact">Get in Touch</Link>
-              </Button>
-            </div>
+            <Link
+              href="#contact"
+              className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75"
+            >
+              Get in Touch
+            </Link>
           </motion.div>
-
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative hidden lg:block"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="relative inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur-3xl" />
-            <Terminal  />
+            <Terminal isHeroTerminal={true} />
           </motion.div>
         </div>
       </div>

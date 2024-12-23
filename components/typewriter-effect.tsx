@@ -1,16 +1,19 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface TypewriterEffectProps {
   words: string[];
   className?: string;
+  typeSpeed: number;
+  deleteSpeed: number;
+  delaySpeed: number;
 }
 
 export function TypewriterEffect({ words, className }: TypewriterEffectProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentText, setCurrentText] = useState('');
+  const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
@@ -20,11 +23,16 @@ export function TypewriterEffect({ words, className }: TypewriterEffectProps) {
     const timeout = setTimeout(() => {
       if (!isDeleting && currentText === word) {
         setTimeout(() => setIsDeleting(true), 1500);
-      } else if (isDeleting && currentText === '') {
+      } else if (isDeleting && currentText === "") {
         setIsDeleting(false);
         setCurrentWordIndex((prev) => (prev + 1) % words.length);
       } else {
-        setCurrentText(word.substring(0, isDeleting ? currentText.length - 1 : currentText.length + 1));
+        setCurrentText(
+          word.substring(
+            0,
+            isDeleting ? currentText.length - 1 : currentText.length + 1
+          )
+        );
       }
     }, typeSpeed);
 
@@ -32,7 +40,7 @@ export function TypewriterEffect({ words, className }: TypewriterEffectProps) {
   }, [currentText, isDeleting, currentWordIndex, words]);
 
   return (
-    <div className={cn('relative', className)}>
+    <div className={cn("relative", className)}>
       <span>{currentText}</span>
       <span className="animate-blink">|</span>
     </div>
