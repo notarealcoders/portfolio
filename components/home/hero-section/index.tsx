@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { HeroContent } from './hero-content';
-import { Terminal } from './terminal';
+import { Terminal } from '@/components/terminal';
 
 export function HeroSection() {
   return (
@@ -16,8 +16,14 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur-3xl" />
-            <Terminal />
+            <div 
+              className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur-3xl" 
+              aria-hidden="true"
+            />
+            <Terminal 
+              className="w-full h-[400px] relative backdrop-blur-xl bg-background/95" 
+              isStatic
+            />
           </motion.div>
         </div>
       </div>
