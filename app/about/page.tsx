@@ -1,6 +1,6 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Code2, Database, Terminal, Wrench } from 'lucide-react';
+import { Code2, Database, Terminal, Wrench, Award, GraduationCap, Briefcase, Heart } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -37,6 +37,45 @@ export default function AboutPage() {
         />
       </div>
 
+      <div className="mb-12">
+        <h2 className="text-2xl font-bold mb-6">Education</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card className="p-6">
+            <GraduationCap className="h-8 w-8 mb-4" />
+            <h3 className="text-xl font-semibold">Master of Computer Science</h3>
+            <p className="text-muted-foreground">Stanford University</p>
+            <p className="text-sm text-muted-foreground">2018 - 2020</p>
+          </Card>
+          <Card className="p-6">
+            <GraduationCap className="h-8 w-8 mb-4" />
+            <h3 className="text-xl font-semibold">Bachelor of Computer Science</h3>
+            <p className="text-muted-foreground">MIT</p>
+            <p className="text-sm text-muted-foreground">2014 - 2018</p>
+          </Card>
+        </div>
+      </div>
+
+      <div className="mb-12">
+        <h2 className="text-2xl font-bold mb-6">Achievements</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card className="p-6">
+            <Award className="h-8 w-8 mb-4" />
+            <h3 className="text-xl font-semibold">Best Developer Award</h3>
+            <p className="text-muted-foreground">TechCorp Annual Awards 2023</p>
+          </Card>
+          <Card className="p-6">
+            <Briefcase className="h-8 w-8 mb-4" />
+            <h3 className="text-xl font-semibold">100+ Projects Delivered</h3>
+            <p className="text-muted-foreground">Across various industries</p>
+          </Card>
+          <Card className="p-6">
+            <Heart className="h-8 w-8 mb-4" />
+            <h3 className="text-xl font-semibold">Open Source Contributor</h3>
+            <p className="text-muted-foreground">500+ contributions on GitHub</p>
+          </Card>
+        </div>
+      </div>
+
       <Timeline />
     </div>
   );
@@ -71,18 +110,33 @@ function Timeline() {
       company: 'Tech Corp',
       period: '2022 - Present',
       description: 'Leading development of enterprise applications using Next.js and Node.js.',
+      achievements: [
+        'Improved application performance by 40%',
+        'Led a team of 5 developers',
+        'Implemented CI/CD pipeline'
+      ]
     },
     {
       title: 'Full-Stack Developer',
       company: 'StartupX',
       period: '2020 - 2022',
       description: 'Built and maintained multiple SaaS applications.',
+      achievements: [
+        'Developed core product features',
+        'Reduced server costs by 30%',
+        'Mentored junior developers'
+      ]
     },
     {
       title: 'Frontend Developer',
       company: 'WebAgency',
       period: '2019 - 2020',
       description: 'Developed responsive web applications using React.',
+      achievements: [
+        'Created reusable component library',
+        'Implemented responsive designs',
+        'Optimized build process'
+      ]
     },
   ];
 
@@ -94,8 +148,13 @@ function Timeline() {
           <Card key={index} className="p-6">
             <h3 className="text-xl font-semibold">{exp.title}</h3>
             <p className="text-muted-foreground">{exp.company}</p>
-            <p className="text-sm text-muted-foreground mb-2">{exp.period}</p>
-            <p>{exp.description}</p>
+            <p className="text-sm text-muted-foreground mb-4">{exp.period}</p>
+            <p className="mb-4">{exp.description}</p>
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+              {exp.achievements.map((achievement, i) => (
+                <li key={i}>{achievement}</li>
+              ))}
+            </ul>
           </Card>
         ))}
       </div>

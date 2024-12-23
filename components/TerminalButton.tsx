@@ -24,7 +24,7 @@ export function TerminalButton() {
       <Button
         variant="outline"
         size="icon"
-        className="fixed bottom-4 right-4 z-50"
+        className="fixed bottom-4 right-4 z-50 hidden md:flex"
         onClick={toggleTerminal}
       >
         <TerminalIcon className="h-4 w-4" />

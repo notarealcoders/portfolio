@@ -2,13 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { HeroContent } from './hero-content';
-import { Terminal } from '@/components/terminal';
+import { Scene } from '@/components/3d/scene';
 import { useTerminalContext } from '@/hooks/use-terminal';
+import { useEffect } from 'react';
 
 export function HeroSection() {
   const { setHeroTerminalVisible } = useTerminalContext();
 
-  // Set hero terminal visible when component mounts
   useEffect(() => {
     setHeroTerminalVisible(true);
     return () => setHeroTerminalVisible(false);
@@ -23,10 +23,9 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur-3xl" />
-            <Terminal isHeroTerminal />
+            <Scene />
           </motion.div>
         </div>
       </div>
